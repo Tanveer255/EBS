@@ -1,0 +1,76 @@
+﻿@model EBS.Models.Model.Products.Product
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1 class="text-2xl font-bold mb-4">Details</h1>
+
+<div class="max-w-2xl mx-auto bg-white p-6 rounded-lg shadow">
+    <h4 class="text-xl font-semibold mb-2">Product</h4>
+    <hr class="my-2" />
+    <dl class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <dt class="font-medium text-gray-700">
+            @Html.DisplayNameFor(model => model.UserId)
+        </dt>
+        <dd class="text-gray-900">
+            @Html.DisplayFor(model => model.UserId)
+        </dd>
+        <dt class="font-medium text-gray-700">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dt class="font-medium text-gray-700">
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+        <dd class="text-gray-900">
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+        <dt class="font-medium text-gray-700">
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd class="text-gray-900">
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+        <dt class="font-medium text-gray-700">
+            @Html.DisplayNameFor(model => model.Category)
+        </dt>
+        <dd class="text-gray-900">
+            @Html.DisplayFor(model => model.Category)
+        </dd>
+        <dt class="font-medium text-gray-700">
+            @Html.DisplayNameFor(model => model.Condition)
+        </dt>
+        <dd class="text-gray-900">
+            @Html.DisplayFor(model => model.Condition)
+        </dd>
+        <dt class="font-medium text-gray-700">
+            @Html.DisplayNameFor(model => model.ListingDate)
+        </dt>
+        <dd class="text-gray-900">
+            @Html.DisplayFor(model => model.ListingDate)
+        </dd>
+        <dt class="font-medium text-gray-700">
+            @Html.DisplayNameFor(model => model.IsDeleted)
+        </dt>
+        <dd class="text-gray-900">
+            @Html.DisplayFor(model => model.IsDeleted)
+        </dd>
+        <dt class="font-medium text-gray-700">
+            @Html.DisplayNameFor(model => model.CreatedTimeStamp)
+        </dt>
+        <dd class="text-gray-900">
+            @Html.DisplayFor(model => model.CreatedTimeStamp)
+        </dd>
+        <dt class="font-medium text-gray-700">
+            @Html.DisplayNameFor(model => model.UpdatedTimeStamp)
+        </dt>
+        <dd class="text-gray-900">
+            @Html.DisplayFor(model => model.UpdatedTimeStamp)
+        </dd>
+    </dl>
+</div>
+
+<div class="mt-4">
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="text-blue-500 hover:underline">Edit</a> |
+    <a asp-action="Index" class="text-blue-500 hover:underline">Back to List</a>
+</div>

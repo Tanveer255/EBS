@@ -1,0 +1,92 @@
+﻿@model IEnumerable<EBS.Models.Model.Products.Product>
+<link href="~/css/common/datatable.css" rel="stylesheet" />
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+
+
+    <h1 class="text-2xl font-bold mb-4 pl-5 ">Index</h1>
+
+    <p>
+        <button class="bg-blue-500 text-white rounded-lg px-4 py-2 hover:bg-blue-600  ml-5 " asp-action="Create">Create</button>
+    </p>
+
+    <table id="export-table" class="relative">
+        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400 ">
+            <tr class="bg-gray-100">
+                <th class="py-2 px-4 border border-gray-200 text-left">
+                    <span class="flex items-center">
+                        Name
+                        <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
+                        </svg>
+                    </span>
+                </th>
+            <tr class="bg-gray-100">
+                <th class="py-2 px-4 border border-gray-200 text-left">
+                    <span class="flex items-center">
+                        Title
+                        <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
+                        </svg>
+                    </span>
+                </th>
+                <th class="py-2 px-4 border border-gray-200 text-left">
+                    <span class="flex items-center">
+                        Description
+                        <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
+                        </svg>
+                    </span>
+                </th>
+                <th class="py-2 px-4 border border-gray-200 text-left">
+                    <span class="flex items-center">
+                        Category
+                        <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
+                        </svg>
+                    </span>
+                </th>
+                <th class="py-2 px-4 border border-gray-200 text-left">
+                    <span class="flex items-center">
+                        Condition
+                        <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
+                        </svg>
+                    </span>
+                </th>
+                <th class="py-2 px-4 border border-gray-200 text-left">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr class="hover:bg-gray-50">
+                    <td class="py-2 px-4 border border-gray-200">
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td class="py-2 px-4 border border-gray-200">
+                        @Html.DisplayFor(modelItem => item.Title)
+                    </td>
+                    <td class="py-2 px-4 border border-gray-200">
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+                    <td class="py-2 px-4 border border-gray-200">
+                        @Html.DisplayFor(modelItem => item.Category)
+                    </td>
+                    <td class="py-2 px-4 border border-gray-200">
+                        @Html.DisplayFor(modelItem => item.Condition)
+                    </td>
+                    <td class="py-2 px-4 border border-gray-200">
+                        <a class="text-blue-600 hover:underline" asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                        <a class="text-blue-600 hover:underline" asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                        <a class="text-red-600 hover:underline" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/simple-datatables@9.0.3"></script>
+<script src="~/js/common/datatable.js"></script>

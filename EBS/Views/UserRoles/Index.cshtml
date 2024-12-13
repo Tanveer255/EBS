@@ -1,0 +1,39 @@
+﻿@using EBS.Models.Model
+@model List<EBS.Models.Model.UserRolesViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 class="text-3xl font-bold mb-6 text-center md:text-left">User Roles</h1>
+
+<div class="overflow-x-auto">
+    <table class="min-w-full table-auto bg-white shadow-md rounded-lg">
+        <thead class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
+            <tr>
+                <th class="py-3 px-6 text-left">First Name</th>
+                <th class="py-3 px-6 text-left">Last Name</th>
+                <th class="py-3 px-6 text-left">Email</th>
+                <th class="py-3 px-6 text-left">Roles</th>
+                <th class="py-3 px-6 text-center">Action</th>
+            </tr>
+        </thead>
+        <tbody class="text-gray-700 text-sm font-light">
+            @foreach (var user in Model)
+            {
+                <tr class="border-b border-gray-200 hover:bg-gray-100">
+                    <td class="py-3 px-6 text-left whitespace-nowrap">@user.FirstName</td>
+                    <td class="py-3 px-6 text-left whitespace-nowrap">@user.LastName</td>
+                    <td class="py-3 px-6 text-left">@user.Email</td>
+                    <td class="py-3 px-6 text-left">@string.Join(", ", user.Roles.ToList())</td>
+                    <td class="py-3 px-6 text-center">
+                        <a class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 focus:ring-2 focus:ring-blue-400 focus:outline-none"
+                           asp-controller="UserRoles" asp-action="Manage" asp-route-userId="@user.UserId">Manage Roles</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

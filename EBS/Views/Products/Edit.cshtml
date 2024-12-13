@@ -1,0 +1,81 @@
+﻿@model EBS.Models.Model.Products.Product
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1 class="text-2xl font-bold mb-4">Edit</h1>
+
+<h4 class="text-xl font-semibold mb-2">Product</h4>
+<hr class="my-2" />
+
+<div class="max-w-2xl mx-auto bg-white p-6 rounded-lg shadow">
+    <form asp-action="Edit">
+        <div asp-validation-summary="ModelOnly" class="text-red-500 mb-4"></div>
+        <div class="mb-4">
+            <label asp-for="UserId" class="block text-gray-700 font-medium"></label>
+            <input asp-for="UserId" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200" />
+            <span asp-validation-for="UserId" class="text-red-500"></span>
+        </div>
+        <div class="mb-4">
+            <label asp-for="Name" class="block text-gray-700 font-medium"></label>
+            <input asp-for="Name" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200" />
+            <span asp-validation-for="Name" class="text-red-500"></span>
+        </div>
+        <div class="mb-4">
+            <label asp-for="Title" class="block text-gray-700 font-medium"></label>
+            <input asp-for="Title" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200" />
+            <span asp-validation-for="Title" class="text-red-500"></span>
+        </div>
+        <div class="mb-4">
+            <label asp-for="Description" class="block text-gray-700 font-medium"></label>
+            <input asp-for="Description" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200" />
+            <span asp-validation-for="Description" class="text-red-500"></span>
+        </div>
+        <div class="mb-4">
+            <label asp-for="Category" class="block text-gray-700 font-medium"></label>
+            <input asp-for="Category" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200" />
+            <span asp-validation-for="Category" class="text-red-500"></span>
+        </div>
+        <div class="mb-4">
+            <label asp-for="Condition" class="block text-gray-700 font-medium"></label>
+            <input asp-for="Condition" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200" />
+            <span asp-validation-for="Condition" class="text-red-500"></span>
+        </div>
+        <div class="mb-4">
+            <label asp-for="ListingDate" class="block text-gray-700 font-medium"></label>
+            <input asp-for="ListingDate" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200" />
+            <span asp-validation-for="ListingDate" class="text-red-500"></span>
+        </div>
+        <input type="hidden" asp-for="Id" />
+        <div class="mb-4">
+            <label class="inline-flex items-center">
+                <input class="form-check-input" asp-for="IsDeleted" />
+                <span class="ml-2 text-gray-700">@Html.DisplayNameFor(model => model.IsDeleted)</span>
+            </label>
+        </div>
+        <div class="mb-4">
+            <label asp-for="CreatedTimeStamp" class="block text-gray-700 font-medium"></label>
+            <input asp-for="CreatedTimeStamp" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200" />
+            <span asp-validation-for="CreatedTimeStamp" class="text-red-500"></span>
+        </div>
+        <div class="mb-4">
+            <label asp-for="UpdatedTimeStamp" class="block text-gray-700 font-medium"></label>
+            <input asp-for="UpdatedTimeStamp" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200" />
+            <span asp-validation-for="UpdatedTimeStamp" class="text-red-500"></span>
+        </div>
+        <div>
+            <input type="submit" value="Save" class="w-full bg-blue-500 text-white font-bold py-2 rounded-md hover:bg-blue-600" />
+        </div>
+    </form>
+</div>
+
+<div class="mt-4">
+    <a asp-action="Index" class="text-blue-500 hover:underline">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -1,0 +1,84 @@
+﻿@model EBS.Models.Model.Products.Product
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1 class="text-2xl font-bold mb-4">Create</h1>
+
+<h4 class="text-lg font-semibold">Product</h4>
+<hr class="my-4" />
+<div class="max-w-md mx-auto">
+    <form asp-action="Create">
+        <div asp-validation-summary="ModelOnly" class="text-red-600 mb-4"></div>
+
+        <div class="mb-4">
+            <label asp-for="UserId" class="block text-gray-700 font-medium mb-2"></label>
+            <input asp-for="UserId" class="border rounded-lg w-full px-3 py-2" />
+            <span asp-validation-for="UserId" class="text-red-600"></span>
+        </div>
+
+        <div class="mb-4">
+            <label asp-for="Title" class="block text-gray-700 font-medium mb-2"></label>
+            <input asp-for="Title" class="border rounded-lg w-full px-3 py-2" />
+            <span asp-validation-for="Title" class="text-red-600"></span>
+        </div>
+
+        <div class="mb-4">
+            <label asp-for="Description" class="block text-gray-700 font-medium mb-2"></label>
+            <input asp-for="Description" class="border rounded-lg w-full px-3 py-2" />
+            <span asp-validation-for="Description" class="text-red-600"></span>
+        </div>
+
+        <div class="mb-4">
+            <label asp-for="Category" class="block text-gray-700 font-medium mb-2"></label>
+            <input asp-for="Category" class="border rounded-lg w-full px-3 py-2" />
+            <span asp-validation-for="Category" class="text-red-600"></span>
+        </div>
+
+        <div class="mb-4">
+            <label asp-for="Condition" class="block text-gray-700 font-medium mb-2"></label>
+            <input asp-for="Condition" class="border rounded-lg w-full px-3 py-2" />
+            <span asp-validation-for="Condition" class="text-red-600"></span>
+        </div>
+
+        <div class="mb-4">
+            <label asp-for="ListingDate" class="block text-gray-700 font-medium mb-2"></label>
+            <input asp-for="ListingDate" class="border rounded-lg w-full px-3 py-2" />
+            <span asp-validation-for="ListingDate" class="text-red-600"></span>
+        </div>
+
+        <div class="mb-4 form-check">
+            <label class="inline-flex items-center">
+                <input class="form-check-input" asp-for="IsDeleted" type="checkbox" />
+                <span class="ml-2 text-gray-700">@Html.DisplayNameFor(model => model.IsDeleted)</span>
+            </label>
+        </div>
+
+        <div class="mb-4">
+            <label asp-for="CreatedTimeStamp" class="block text-gray-700 font-medium mb-2"></label>
+            <input asp-for="CreatedTimeStamp" class="border rounded-lg w-full px-3 py-2" />
+            <span asp-validation-for="CreatedTimeStamp" class="text-red-600"></span>
+        </div>
+
+        <div class="mb-4">
+            <label asp-for="UpdatedTimeStamp" class="block text-gray-700 font-medium mb-2"></label>
+            <input asp-for="UpdatedTimeStamp" class="border rounded-lg w-full px-3 py-2" />
+            <span asp-validation-for="UpdatedTimeStamp" class="text-red-600"></span>
+        </div>
+
+        <div>
+            <input type="submit" value="Create" class="bg-blue-500 text-white rounded-lg px-4 py-2 hover:bg-blue-600" />
+        </div>
+    </form>
+</div>
+
+<div class="mt-4">
+    <a asp-action="Index" class="text-blue-500 hover:underline">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

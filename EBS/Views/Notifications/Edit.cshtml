@@ -1,0 +1,82 @@
+﻿@model EBS.Models.Model.Products.Notification
+
+@{
+    ViewData["Title"] = "Edit Notification";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 class="text-2xl font-bold mb-4">Edit Notification</h1>
+
+<div class="max-w-2xl mx-auto bg-white shadow-md rounded-lg p-6">
+    <h4 class="text-lg font-semibold mb-2">Notification Details</h4>
+    <hr class="mb-4" />
+    <form asp-action="Edit">
+        <div asp-validation-summary="ModelOnly" class="text-danger mb-4"></div>
+
+        <div class="mb-4">
+            <label asp-for="UserId" class="block text-sm font-medium text-gray-700"></label>
+            <input asp-for="UserId" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring focus:ring-blue-300" />
+            <span asp-validation-for="UserId" class="text-danger text-sm"></span>
+        </div>
+
+        <div class="mb-4">
+            <label asp-for="ProductId" class="block text-sm font-medium text-gray-700"></label>
+            <select asp-for="ProductId" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring focus:ring-blue-300" asp-items="ViewBag.ProductId"></select>
+            <span asp-validation-for="ProductId" class="text-danger text-sm"></span>
+        </div>
+
+        <div class="mb-4">
+            <label asp-for="Message" class="block text-sm font-medium text-gray-700"></label>
+            <input asp-for="Message" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring focus:ring-blue-300" />
+            <span asp-validation-for="Message" class="text-danger text-sm"></span>
+        </div>
+
+        <div class="mb-4">
+            <label asp-for="NotificationDate" class="block text-sm font-medium text-gray-700"></label>
+            <input asp-for="NotificationDate" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring focus:ring-blue-300" />
+            <span asp-validation-for="NotificationDate" class="text-danger text-sm"></span>
+        </div>
+
+        <div class="mb-4">
+            <label class="inline-flex items-center">
+                <input type="checkbox" asp-for="IsRead" class="form-check-input" />
+                <span class="ml-2">@Html.DisplayNameFor(model => model.IsRead)</span>
+            </label>
+        </div>
+
+        <input type="hidden" asp-for="Id" />
+
+        <div class="mb-4">
+            <label class="inline-flex items-center">
+                <input type="checkbox" asp-for="IsDeleted" class="form-check-input" />
+                <span class="ml-2">@Html.DisplayNameFor(model => model.IsDeleted)</span>
+            </label>
+        </div>
+
+        <div class="mb-4">
+            <label asp-for="CreatedTimeStamp" class="block text-sm font-medium text-gray-700"></label>
+            <input asp-for="CreatedTimeStamp" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring focus:ring-blue-300" />
+            <span asp-validation-for="CreatedTimeStamp" class="text-danger text-sm"></span>
+        </div>
+
+        <div class="mb-4">
+            <label asp-for="UpdatedTimeStamp" class="block text-sm font-medium text-gray-700"></label>
+            <input asp-for="UpdatedTimeStamp" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring focus:ring-blue-300" />
+            <span asp-validation-for="UpdatedTimeStamp" class="text-danger text-sm"></span>
+        </div>
+
+        <div class="mb-4">
+            <input type="submit" value="Save" class="btn btn-primary bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" />
+        </div>
+    </form>
+</div>
+
+<div class="mt-4 text-center">
+    <a asp-action="Index" class="text-blue-600 hover:underline">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
