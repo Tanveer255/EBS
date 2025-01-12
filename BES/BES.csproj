@@ -12,8 +12,8 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.6" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\EBS.BLL\EBS.BLL.csproj" />
-    <ProjectReference Include="..\EBS.DAL\EBS.DAL.csproj" />
-    <ProjectReference Include="..\EBS.Models\EBS.Models.csproj" />
+    <ProjectReference Include="..\EBS.BLL\BES.BLL.csproj" />
+    <ProjectReference Include="..\EBS.DAL\BES.DAL.csproj" />
+    <ProjectReference Include="..\EBS.Models\BES.Models.csproj" />
   </ItemGroup>
 </Project>

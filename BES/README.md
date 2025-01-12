@@ -53,6 +53,6 @@ Tips:
 Help us grow by give a star.
 
 # Supporter
-This project supported by: TANVEER [https://www.linkedin.com/in/muhammad-tanveer-5b0a111a0/](https://www.linkedin.com/in/muhammad-tanveer-5b0a111a0/). Feel free to visit their site and use 50% discount using discount code: **GITHUB50**
+This project supported by: TANVEER [https://www.linkedin.com/in/muhammad-tanveer-5b0a111a0/](https://www.linkedin.com/in/muhammad-tanveer-5b0a111a0/).  **GITHUB50**
 
 

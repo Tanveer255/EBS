@@ -7,7 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\EBS.Models\EBS.Models.csproj" />
+    <ProjectReference Include="..\EBS.DAL\BES.DAL.csproj" />
+    <ProjectReference Include="..\EBS.Models\BES.Models.csproj" />
   </ItemGroup>
 
 </Project>
